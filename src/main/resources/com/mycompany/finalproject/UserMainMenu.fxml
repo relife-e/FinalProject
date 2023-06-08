@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.finalproject.UserMainMenuController">
+   <children>
+      <Button layoutX="33.0" layoutY="28.0" mnemonicParsing="false" onAction="#btn1" prefHeight="79.0" prefWidth="243.0" text="Search Room">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Button>
+      <Button layoutX="314.0" layoutY="28.0" mnemonicParsing="false" onAction="#btn2" prefHeight="79.0" prefWidth="243.0" text="View Room">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Button>
+      <Button layoutX="33.0" layoutY="150.0" mnemonicParsing="false" onAction="#btn3" prefHeight="79.0" prefWidth="243.0" text="Book Room">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Button>
+      <Button layoutX="314.0" layoutY="150.0" mnemonicParsing="false" onAction="#btn4" prefHeight="79.0" prefWidth="243.0" text="View Booking">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Button>
+      <Button layoutX="33.0" layoutY="277.0" mnemonicParsing="false" onAction="#btn5" prefHeight="79.0" prefWidth="243.0" text="Back">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Button>
+      <Button layoutX="314.0" layoutY="277.0" mnemonicParsing="false" onAction="#exitButtonClick" prefHeight="79.0" prefWidth="243.0" text="Exit">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
