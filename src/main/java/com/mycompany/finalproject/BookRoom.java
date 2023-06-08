@@ -8,6 +8,7 @@ package com.mycompany.finalproject;
  *
  * @author Anmol Saru
  */
+//Class that describes BookRoom attributes
 public class BookRoom {
     private int roomId;
     private String checkIn;

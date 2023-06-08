@@ -19,10 +19,11 @@ import javafx.scene.control.TextField;
  * @author Anmol Saru
  */
 public class CreateRoomController implements Initializable, IExitable, ISuccessAlert, IValidationAlert {
-    
+    //arraylist object for rooms class
     private ArrayList<Rooms> roomList = new ArrayList<Rooms>();
-    
+    //creating RoomList object
     private RoomsList rList = new RoomsList();
+    //Initalizing FXMLs id
     @FXML
     private TextField add;
     
@@ -40,7 +41,8 @@ public class CreateRoomController implements Initializable, IExitable, ISuccessA
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }  
+    //exits program
     @FXML
     private void exitButtonClick(ActionEvent event) {
         this.exitClick();
@@ -57,11 +59,11 @@ public class CreateRoomController implements Initializable, IExitable, ISuccessA
             int nB = Integer.parseInt(numBed.getText());
             
             RoomsList rList = new RoomsList();
-            //calling land constructor
+            //calling rooms constructor
             Rooms r = new Rooms(rId,nB,address,rN);
-            //adding all the values to landList
+            //adding all the values to roomsList
             roomList.add(r);
-            //writing data to land file
+            //writing data to Room file
             rList.writeRoomsDataToFile(roomList);
             showS();
             App.setRoot("AdminMainWindow");

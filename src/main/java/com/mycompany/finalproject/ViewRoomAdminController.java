@@ -43,15 +43,15 @@ public class ViewRoomAdminController implements Initializable , IExitable, ISucc
             ex.printStackTrace();
         }
     }
-
+    //Dispalyes all the room
 @FXML
     private void searchBtn()
     {
         for(Rooms r: roomList)
         {   
-            if( r.isIsSold() == false){
+            
             resultId.appendText("Room Id: " + r.getRoomId() + "\nRoom Num: " + r.getRoomNum() + "\nNum Bed: " + r.getNumBed() + "\nAddress: " + r.getAddress() + "\n\n");
-            }
+            
         }
         success();
     }

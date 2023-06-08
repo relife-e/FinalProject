@@ -17,7 +17,7 @@ import java.util.Scanner;
  * @author Anmol Saru
  */
 public class RoomsList {
-    //initalizing the arraylsit of land data type
+    //initalizing the arraylsit of Rooms data type
     private ArrayList<Rooms> roomList = new ArrayList<>();
     
     private int roomId;    
@@ -28,7 +28,7 @@ public class RoomsList {
     //method that helps to read the data from arraylist
     public ArrayList<Rooms> readRoomsDataFromFile() throws IOException {
         Scanner input = new Scanner(System.in);
-        //ArrayList<Land> landList = new ArrayList<>();
+        
         File file = new File("Room.txt");
         try {
             if (file.exists()) {
@@ -41,7 +41,7 @@ public class RoomsList {
                     int numB = Integer.parseInt(fields[1]);
                     String add = fields[2];
                     int roomN = Integer.parseInt(fields[3]);
-                    //calling land constructor
+                    //calling room constructor
                     Rooms rObj = new Rooms(rId, numB, add, roomN);
                     roomList.add(rObj);
                     line = reader.readLine();
@@ -55,7 +55,7 @@ public class RoomsList {
         
         return roomList;
     }
-//writing all the land info into a file
+//writing all the room info into a file
     public void writeRoomsDataToFile(ArrayList<Rooms> roomList) throws IOException {
         FileWriter writer = new FileWriter("Room.txt",true);
         for (Rooms rObj : roomList) {

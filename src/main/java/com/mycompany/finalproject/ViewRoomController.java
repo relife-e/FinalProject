@@ -43,7 +43,7 @@ public class ViewRoomController implements Initializable , IExitable, ISuccessAl
             ex.printStackTrace();
         }
     }
-
+    //Displays all the room
 @FXML
     private void searchBtn()
     {

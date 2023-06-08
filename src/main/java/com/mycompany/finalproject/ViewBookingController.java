@@ -20,12 +20,15 @@ import javafx.scene.control.TextField;
  * @author Anmol Saru
  */
 public class ViewBookingController implements Initializable, IExitable, ISuccessAlert, IValidationAlert {
-    
+    //ArrayList object for BookRoom
     ArrayList<BookRoom> bookrList = new ArrayList<>();
+    //BookRoomList object
     BookRoomList brList = new BookRoomList();
     
+    //LoginUserController object
     LoginUserController userL = new LoginUserController();
     
+    //initializing the text field
         @FXML
     private TextField rId;
 
@@ -47,7 +50,7 @@ public class ViewBookingController implements Initializable, IExitable, ISuccess
             ex.printStackTrace();
         }
     }    
-    
+    //Search button that search all the booking 
     @FXML
     private void searchBtn() throws IOException
     {
@@ -63,7 +66,7 @@ public class ViewBookingController implements Initializable, IExitable, ISuccess
         }
          
         BookRoom ee = null;
-        
+        //for loop that iterates the number of bookrList size or until room id matches
         for (BookRoom r : bookrList) {
             System.out.println(userL.returnName());
             //validating sale id
@@ -77,7 +80,7 @@ public class ViewBookingController implements Initializable, IExitable, ISuccess
             }
             
         }
-        
+        //validating for wrong room id enterd by user
         if (ee == null)
         {
             showValidationAlert("No booking found");
@@ -90,11 +93,13 @@ public class ViewBookingController implements Initializable, IExitable, ISuccess
         String successMessage = "Operation completed successfully.";
         showSuccessAlert(successMessage);
     }
+    //dispalyes previous GUI
     @FXML 
     private void back() throws IOException
     {
         App.setRoot("UserMainMenu");
     }
+    //Exits the application
     @FXML
     private void exitButtonClick(ActionEvent event) {
         this.exitClick();

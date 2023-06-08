@@ -35,7 +35,7 @@ public class LoginUserController implements Initializable, IExitable,IValidation
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         try {
-            //reading  data for sale file
+            //reading  data for user file
             userList = uList.readUserDataFromFile();
             
         } catch (IOException ex) {
@@ -60,7 +60,7 @@ public class LoginUserController implements Initializable, IExitable,IValidation
         User user = null;
         
         for (User u : userList) {
-            //validating sale id
+            //validating user id and password
             if ((u.getUserName().equals(uName)) && (u.getPassword().equals(passW))) {
                 success();
                 setName(u.getUserName());

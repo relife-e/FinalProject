@@ -34,16 +34,19 @@ public class UserMenuController implements Initializable, IExitable {
             ex.printStackTrace();
         }
     }
+    //Allows user to create account 
     @FXML
     private void createAc() throws IOException
     {
         App.setRoot("RegisterUser");
     }
+    //Displayes previous GUI
      @FXML 
     private void back() throws IOException
     {
         App.setRoot("MainWindow");
     }
+    //Exits program
     @FXML
     private void exitButtonClick(ActionEvent event) {
         this.exitClick();

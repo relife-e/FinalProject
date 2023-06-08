@@ -25,13 +25,13 @@ public class MainWindowController implements Initializable,IExitable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+    //Shows admin window
     @FXML
     private void adminBtn() throws IOException
     {
         App.setRoot("adminWindow");
     }
-    
+    //Shows user mindow
     @FXML
     private void userBtn() throws IOException
     {

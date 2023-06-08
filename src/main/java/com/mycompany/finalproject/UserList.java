@@ -17,14 +17,14 @@ import java.util.Scanner;
  * @author Anmol Saru
  */
 public class UserList {
-    //initalizing the arraylsit of land data type
+    //initalizing the arraylsit of User data type
     private ArrayList<User> userList = new ArrayList<>();
     
     
     //method that helps to read the data from arraylist
     public ArrayList<User> readUserDataFromFile() throws IOException {
         Scanner input = new Scanner(System.in);
-        //ArrayList<Land> landList = new ArrayList<>();
+        
         File file = new File("User.txt");
         try {
             if (file.exists()) {
@@ -36,7 +36,7 @@ public class UserList {
                     
                     String uName = fields[0];
                     String uPass = fields[1];
-                    //calling land constructor
+                    //calling User constructor
                     User userObj = new User(uName, uPass);
                     userList.add(userObj);
                     line = reader.readLine();
@@ -50,7 +50,7 @@ public class UserList {
         
         return userList;
     }
-//writing all the land info into a file
+//writing all the User info into a file
     public void writeUserDataToFile(ArrayList<User> userList) throws IOException {
         FileWriter writer = new FileWriter("User.txt",true);
         for (User userObj : userList) {

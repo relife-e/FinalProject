@@ -53,13 +53,13 @@ public class RegisterUserController implements Initializable, IExitable, ISucces
             String uName = userN.getText();
             String passW = passId.getText();
             
-            //creating LandList object
+            //creating UserList object
             UserList uList = new UserList();
-            //calling land constructor
+            //calling user constructor
             User userObj = new User(uName, passW);
-            //adding all the values to landList
+            //adding all the values to userList
             userList.add(userObj);
-            //writing data to land file
+            //writing data to user file
             uList.writeUserDataToFile(userList);
             showS();
             App.setRoot("UserMenu");
@@ -68,7 +68,7 @@ public class RegisterUserController implements Initializable, IExitable, ISucces
         }
     }
     
-    //method that helps user to display the CQRealEstate
+    //method that helps user to display the UserMainMenu
     @FXML
     private void backBtn() throws IOException
     {

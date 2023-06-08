@@ -28,13 +28,14 @@ public class BookRoomController implements Initializable, IExitable, IValidation
     //creating Rooms class object
     BookRoomList brList = new BookRoomList();
     
-    LoginUserController luC = new LoginUserController();
     
+    //creating RoomList object
     RoomsList rList = new RoomsList();
+    //creating arraylist for rooms
     ArrayList<Rooms> roomsList = new ArrayList<Rooms>();
     
     
-    
+    //initalizing FXMLs
     @FXML
     private DatePicker checkIn;
 
@@ -63,10 +64,18 @@ public class BookRoomController implements Initializable, IExitable, IValidation
             ex.printStackTrace();
         }
     }    
+    //exits program
     @FXML
     private void exitButtonClick(ActionEvent event) {
         this.exitClick();
     }
+    //shows message for already booked rooms
+    private void booked() throws IOException
+    {
+        this.showValidationAlert("Room is already booked");
+        App.setRoot("UserMainMenu");
+    }
+    //book button
     @FXML
 private void bookBtn() throws IOException {
     int rId = 0;
@@ -77,26 +86,42 @@ private void bookBtn() throws IOException {
         showValidationAlert("Invalid room ID");
         return;
     }
-
-    Rooms ee = null;
-
-    for (Rooms r : roomsList) {
-        if (r.getRoomId() == rId && r.isIsSold() != true) {
-            int rmId = rId;
-            ee = r;
-            LocalDate cIn = checkIn.getValue();
+    //parsing data to a variable
+    int rmId = rId;
+    LocalDate cIn = checkIn.getValue();
             String chIn = cIn.toString();
 
             LocalDate cOut = checkOut.getValue();
             String chOut = cOut.toString();
             
             String uN = name.getText();
-           
+            
+    Rooms ee = null;
+    //using for loop to check if entered room id is valid
+    for (Rooms r : roomsList) {
+        if (r.getRoomId() == rId) {      
+            ee = r;   
+            break;
+        }   
+    }
+    //if room Id doesnot exist displays error message
+    if (ee == null) {
+        showValidationAlert(" Please enter correct roomId or room that is not sold");
+        } 
+    //if room is booked displays message
+        if(ee.isIsSold())
+        {
+            booked();
+            
+        }
+        
+           //Calling BookRoom constructor
             BookRoom brObj = new BookRoom(rmId, chIn, chOut, uN);
+            //bookRoom arraylist
             bRList.add(brObj);
 
             // Update Rooms object
-            r.setIsSold(true);
+            ee.setIsSold(true);
 
             // Write updated data to file
             
@@ -104,15 +129,8 @@ private void bookBtn() throws IOException {
 
             success();
             App.setRoot("UserMainMenu");
-            return;
-        }
-        
-    }
-    if (ee == null) {
-        } else {
-        
-            showValidationAlert("Cannot Book. Please enter correct roomId or room that is not sold");
-        }
+            
+    
 }
     //method that calls interface to display sucessfull message
     @FXML
@@ -121,6 +139,7 @@ private void bookBtn() throws IOException {
         String successMessage = "Operation completed successfully.";
         showSuccessAlert(successMessage);
     }
+    //displayes previous gui
     @FXML 
     private void back() throws IOException
     {

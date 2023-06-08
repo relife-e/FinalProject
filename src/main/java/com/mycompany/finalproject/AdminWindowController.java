@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package com.mycompany.finalproject;
-
+//importing libaries
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,6 +23,7 @@ public class AdminWindowController implements Initializable, IValidationAlert, I
      /**
      * Initializes the controller class.
      */
+    //initalizing textfields
     @FXML
     private TextField p;
 
@@ -34,23 +35,26 @@ public class AdminWindowController implements Initializable, IValidationAlert, I
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }   
+    //login method that validates admin login details
     @FXML
     private void login() throws IOException
     {
         String username = uN.getText();
         String passW = p.getText();
-        
+        //validating admin detail
         if ("anmol".equals(username) && "ASS3".equals(passW))
         {   
             showSuccessAlert("SuccessFull !!!");
             App.setRoot("AdminMainWindow");
             
         }
-        else
+        else{
+            //showing warning message
             showValidationAlert("Enter correct Username and password. ");
     }
-    
+    }
+    //shows previous GUI
     @FXML
     private void returnBtn() throws IOException
     {

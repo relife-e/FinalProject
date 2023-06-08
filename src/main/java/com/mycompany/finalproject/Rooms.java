@@ -8,6 +8,7 @@ package com.mycompany.finalproject;
  *
  * @author Anmol Saru
  */
+//Class that describes the Rooms attributes
 public class Rooms {
     private int roomId;    
     private int numBed;
@@ -55,6 +56,7 @@ public class Rooms {
     }
 
     public void setIsSold(boolean isSold) {
+        
         this.isSold = isSold;
     }
 

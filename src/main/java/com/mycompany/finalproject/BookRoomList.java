@@ -22,7 +22,7 @@ public class BookRoomList {
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-    //initalizing the arraylsit of land data type
+    //initalizing the arraylsit of bookroom data type
     private ArrayList<BookRoom> bRoomList = new ArrayList<>();
     
     
@@ -30,7 +30,7 @@ public class BookRoomList {
     //method that helps to read the data from arraylist
     public ArrayList<BookRoom> readBookRoomDataFromFile() throws IOException {
         Scanner input = new Scanner(System.in);
-        //ArrayList<Land> landList = new ArrayList<>();
+        
         File file = new File("BookRoom.txt");
         try {
             if (file.exists()) {
@@ -43,7 +43,7 @@ public class BookRoomList {
                     String cIn = fields[1];
                     String cOut = fields[2];
                     String uName = fields[3];
-                    //calling land constructor
+                    //calling bookroom constructor
                     BookRoom bRObj = new BookRoom(rId, cIn, cOut, uName);
                     bRoomList.add(bRObj);
                     line = reader.readLine();
@@ -57,7 +57,7 @@ public class BookRoomList {
         
         return bRoomList;
     }
-//writing all the land info into a file
+//writing all the bookroom info into a file
     public void writeBookRoomDataToFile(ArrayList<BookRoom> bRoomList) throws IOException {
         FileWriter writer = new FileWriter("BookRoom.txt",true);
         for (BookRoom brObj : bRoomList) {

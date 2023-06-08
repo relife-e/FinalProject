@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package com.mycompany.finalproject;
-
+//importing libraries
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,23 +24,25 @@ public class AdminMainWindowController implements Initializable, IExitable, IVal
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
+    //view room button that views the rooom
     @FXML
     private void viewRoomBtn() throws IOException
     {
-        App.setRoot("ViewRoom");
+        App.setRoot("ViewRoomAdmin");
     }
-    
+    //create button that allows admin to create room
     @FXML
     private void createBtn() throws IOException
     {
         App.setRoot("CreateRoom");
     }
+    //shows previous GUI
     @FXML
     private void backBtn() throws IOException
     {
         App.setRoot("AdminWindow");
     }
+    //exits application
     @FXML
     private void exitButtonClick(ActionEvent event) {
         this.exitClick();

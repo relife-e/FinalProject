@@ -1,3 +1,5 @@
 1,4,Auburn,22
 3,4,Pulchiwk,23
 5,6,Katmandu,902
+2,1,Pulchiwk,1001
+4,23,ASDADS,23

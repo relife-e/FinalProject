@@ -8,6 +8,7 @@ package com.mycompany.finalproject;
  *
  * @author Anmol Saru
  */
+//Method that desribes the user attributes
 public class User {
     
     private String userName;

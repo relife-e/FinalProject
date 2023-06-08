@@ -38,7 +38,7 @@ public class SearchRoomController implements Initializable, IExitable, ISuccessA
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
         // TODO
         try {
             //reading  data for sale file
@@ -46,8 +46,8 @@ public class SearchRoomController implements Initializable, IExitable, ISuccessA
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-    }    
-    
+    }   
+    //method that search the room based on id entered by user
     @FXML
     private void searchBtn() throws IOException
     {
@@ -67,7 +67,7 @@ public class SearchRoomController implements Initializable, IExitable, ISuccessA
         Rooms ee = null;
         
         for (Rooms r : roomList) {
-            //validating sale id
+            //validating room id
             if (r.getRoomId() == roomId) {
                 
         {
